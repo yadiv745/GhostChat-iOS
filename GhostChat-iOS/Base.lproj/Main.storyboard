@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,20 +19,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Status" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-8H-e3Q">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Status" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-8H-e3Q">
                                 <rect key="frame" x="293" y="20" width="282" height="30"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.36078431370000003" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="xzd-VR-2d3"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isk-yC-YM7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isk-yC-YM7">
                                 <rect key="frame" x="385" y="58" width="116" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="191" id="FqA-2i-fik"/>
+                                    <constraint firstAttribute="width" constant="116" id="hGq-aI-cnR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                                 <state key="normal" title="Send">
                                     <color key="titleColor" red="0.66274509800000003" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,9 +44,13 @@
                                     <action selector="sendButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YR0-jd-fJA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYk-CA-WuL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYk-CA-WuL">
                                 <rect key="frame" x="17" y="58" width="116" height="30"/>
-                                <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="BWv-p3-lc8"/>
+                                    <constraint firstAttribute="height" constant="30" id="QJR-Un-NRo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                                 <state key="normal" title="ReFresh">
                                     <color key="titleColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -49,15 +58,18 @@
                                     <action selector="refreshPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JoS-6t-Hka"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nickname" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJi-Rl-lOD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nickname" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJi-Rl-lOD">
                                 <rect key="frame" x="11" y="20" width="274" height="30"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.36078431370000003" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="1B3-EH-pc8"/>
+                                    <constraint firstAttribute="width" constant="274" id="o6u-x0-p0m"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="bnf-yC-ppw"/>
+                                </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hC3-CC-y27">
                                 <rect key="frame" x="-5" y="106" width="605" height="494"/>
@@ -65,7 +77,7 @@
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chatCell" textLabel="idA-uW-R5j" detailTextLabel="X0d-nq-bXa" rowHeight="77" style="IBUITableViewCellStyleSubtitle" id="Bx5-nn-Cca">
+                                    <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chatCell" textLabel="idA-uW-R5j" detailTextLabel="X0d-nq-bXa" rowHeight="55" style="IBUITableViewCellStyleSubtitle" id="Bx5-nn-Cca">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bx5-nn-Cca" id="PA4-jB-fSJ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -73,13 +85,14 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="-100  BLE Device Name Here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="idA-uW-R5j">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
                                                     <color key="textColor" red="0.84313725490000002" green="0.36078431370000003" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" text="UUID: 0000-0000-0000-0000-0000        Other Infromation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X0d-nq-bXa">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="DamascusLight" family="Damascus" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="11"/>
                                                     <color key="textColor" red="0.94117647059999998" green="0.66274509800000003" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -93,7 +106,7 @@
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="-47  Not Important Device" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DEt-3a-4BP">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="15"/>
                                                     <color key="textColor" red="0.94117647059999998" green="0.66274509800000003" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -109,17 +122,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hC3-CC-y27" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="7mf-cs-xX5"/>
-                            <constraint firstItem="hC3-CC-y27" firstAttribute="top" secondItem="isk-yC-YM7" secondAttribute="bottom" constant="19" id="8Vh-lf-bVD"/>
-                            <constraint firstItem="iJi-Rl-lOD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-5" id="9pj-wA-GUe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="isk-yC-YM7" secondAttribute="trailing" constant="-28" id="ACo-3J-luN"/>
-                            <constraint firstItem="iJi-Rl-lOD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="KCy-Ah-qCc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Lc4-8H-e3Q" secondAttribute="trailing" constant="9" id="KHc-Og-Eyj"/>
-                            <constraint firstItem="Lc4-8H-e3Q" firstAttribute="leading" secondItem="iJi-Rl-lOD" secondAttribute="trailing" constant="8" symbolic="YES" id="N4x-MV-KB5"/>
-                            <constraint firstItem="hC3-CC-y27" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-21" id="Nvh-gG-4If"/>
-                            <constraint firstItem="iJi-Rl-lOD" firstAttribute="baseline" secondItem="Lc4-8H-e3Q" secondAttribute="baseline" id="gid-Nt-OqC"/>
-                            <constraint firstAttribute="trailing" secondItem="hC3-CC-y27" secondAttribute="trailing" id="jHq-vg-asO"/>
-                            <constraint firstItem="isk-yC-YM7" firstAttribute="top" secondItem="Lc4-8H-e3Q" secondAttribute="bottom" constant="9" id="xyM-KB-Sww"/>
+                            <constraint firstItem="Lc4-8H-e3Q" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="7Le-JC-JGt"/>
+                            <constraint firstItem="isk-yC-YM7" firstAttribute="baseline" secondItem="DYk-CA-WuL" secondAttribute="baseline" id="7kU-Go-tYZ"/>
+                            <constraint firstItem="iJi-Rl-lOD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-5" id="Ao6-2U-Fbu"/>
+                            <constraint firstItem="DYk-CA-WuL" firstAttribute="top" secondItem="iJi-Rl-lOD" secondAttribute="bottom" constant="8" symbolic="YES" id="Gix-tU-qgK"/>
+                            <constraint firstAttribute="trailing" secondItem="hC3-CC-y27" secondAttribute="trailing" id="Gz3-HP-xAE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lc4-8H-e3Q" secondAttribute="trailing" constant="9" id="HRY-2u-KLl"/>
+                            <constraint firstItem="iJi-Rl-lOD" firstAttribute="baseline" secondItem="Lc4-8H-e3Q" secondAttribute="baseline" id="K1Y-v0-Z8N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="isk-yC-YM7" secondAttribute="trailing" constant="83" id="Ldj-oh-tW7"/>
+                            <constraint firstItem="hC3-CC-y27" firstAttribute="top" secondItem="DYk-CA-WuL" secondAttribute="bottom" constant="18" id="UO8-rP-Q2H"/>
+                            <constraint firstItem="Lc4-8H-e3Q" firstAttribute="leading" secondItem="iJi-Rl-lOD" secondAttribute="trailing" constant="8" symbolic="YES" id="UuR-PI-WeQ"/>
+                            <constraint firstItem="DYk-CA-WuL" firstAttribute="firstBaseline" secondItem="isk-yC-YM7" secondAttribute="firstBaseline" id="cQ7-7W-CTh"/>
+                            <constraint firstItem="DYk-CA-WuL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="1" id="kGL-42-Ffn"/>
+                            <constraint firstItem="hC3-CC-y27" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="rRV-Nr-bf6"/>
+                            <constraint firstItem="hC3-CC-y27" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-21" id="vBl-ha-RfW"/>
                         </constraints>
                     </view>
                     <connections>
